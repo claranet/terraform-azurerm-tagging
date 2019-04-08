@@ -9,7 +9,7 @@ variable "tags" {
 }
 
 variable "force" {
-  description = "True to apply very time"
+  description = "True to apply every time"
   type        = "string"
   default     = "false"
 }

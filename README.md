@@ -24,6 +24,6 @@ module "myresource_tagging" {
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | behavior | Behavior for tags applying. Must be `merge` or `overwrite`. | string | `"merge"` | no |
-| force | True to apply very time | string | `"false"` | no |
+| force | True to apply every time | string | `"false"` | no |
 | resource\_id | Id of the Azure resource to tag | string | n/a | yes |
 | tags | Tags to apply on resource | map | n/a | yes |
