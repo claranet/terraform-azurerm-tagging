@@ -1,0 +1,7 @@
+resource_id="/subscriptions/aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee/resourceGroups/my-rg/providers/Microsoft.provider/subtype/components/my-resource-name"
+tags ={
+  foo="bar"
+  bar="foo"
+}
+force="true"
+behavior="overwrite"
