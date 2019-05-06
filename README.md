@@ -1,13 +1,12 @@
 # Azure tagging
 
-## Purpose
 This Terraform helper allows to merge or overwrite tags on a resource.
 
 ## Usage
 You can use this module by including it this way:
 ```
 module "myresource_tagging" {
-  source = "git::ssh://git@git.fr.clara.net/claranet/cloudnative/projects/cloud/azure/terraform/helpers/tagging.git?ref=vX.X.X"
+  source = "git::ssh://git@git.fr.clara.net/claranet/cloudnative/projects/cloud/azure/terraform/modules/tagging.git?ref=vX.X.X"
 
   resource_id = "${var.myresource_id}"
   behavior    = "merge"   # Must be "merge" or "overwrite"
