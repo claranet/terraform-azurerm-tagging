@@ -18,7 +18,7 @@ resource "null_resource" "tags" {
   }
 
   triggers = {
-    resource    = flatten(var.resource_ids)
+    resource    = var.resource_ids[count.index]
     tags        = jsonencode(var.tags)
     force-apply = var.force ? uuid() : false
     behavior    = var.behavior
