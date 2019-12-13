@@ -6,7 +6,7 @@ This Terraform helper allows to merge or overwrite tags on a resource.
 
 ## Requirements
 
-  * [AzureRM Terraform provider](https://www.terraform.io/docs/providers/azurerm/) >= 1.38.0
+  * [AzureCLI](https://docs.microsoft.com/fr-fr/cli/azure/?view=azure-cli-latest) >= 2.0.77
 
 ## Terraform version compatibility
 
@@ -24,8 +24,8 @@ module "myresource_tagging" {
   source  = "claranet/tagging/azurerm"
   version = "x.x.x"
 
-  resource_id = var.myresource_id
-  behavior    = "merge"   # Must be "merge" or "overwrite"
+  resource_ids = [var.myresource_id_1, var.myresource_id_2]
+  behavior     = "merge"   # Must be "merge" or "overwrite"
   
   tags = {
     "foo"        = "bar",
