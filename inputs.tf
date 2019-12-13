@@ -1,21 +1,27 @@
-variable "resource_id" {
+variable "resource_ids" {
   description = "Id of the Azure resource to tag"
-  type        = "string"
+  type        = list(string)
 }
 
 variable "tags" {
   description = "Tags to apply on resource"
-  type        = "map"
+  type        = map(string)
 }
 
 variable "force" {
   description = "True to apply every time"
-  type        = "string"
-  default     = "false"
+  type        = bool
+  default     = false
 }
 
 variable "behavior" {
   description = "Behavior for tags applying. Must be `merge` or `overwrite`."
-  type        = "string"
+  type        = string
   default     = "merge"
+}
+
+variable "nb_resources" {
+  description = "Number of resources to tag"
+  type        = number
+  default     = 1
 }
