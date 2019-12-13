@@ -23,5 +23,4 @@ variable "behavior" {
 variable "nb_resources" {
   description = "Number of resources to tag"
   type        = number
-  default     = 1
 }

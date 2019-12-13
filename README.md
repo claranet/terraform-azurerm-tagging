@@ -48,5 +48,7 @@ module "myresource_tagging" {
 ## Related documentation
 
 Terraform null_resource documentation: [terraform.io/docs/provisioners/null_resource.html](https://www.terraform.io/docs/provisioners/null_resource.html)
+
 Terraform local_exec documentation: [terraform.io/docs/provisioners/local-exec.html](https://www.terraform.io/docs/provisioners/local-exec.html)
+
 Microsoft Azure tagging documentation: [docs.microsoft.com/fr-fr/azure/azure-resource-manager/resource-group-using-tags](https://docs.microsoft.com/fr-fr/azure/azure-resource-manager/resource-group-using-tags)
