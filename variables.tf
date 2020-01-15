@@ -1,5 +1,5 @@
 variable "resource_ids" {
-  description = "Id of the Azure resource to tag"
+  description = "Id of the Azure resources to tag"
   type        = list(string)
 }
 

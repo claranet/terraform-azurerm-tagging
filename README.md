@@ -24,6 +24,7 @@ module "myresource_tagging" {
   source  = "claranet/tagging/azurerm"
   version = "x.x.x"
 
+  nb_resources = 2
   resource_ids = [var.myresource_id_1, var.myresource_id_2]
   behavior     = "merge"   # Must be "merge" or "overwrite"
   
@@ -41,7 +42,7 @@ module "myresource_tagging" {
 | behavior | Behavior for tags applying. Must be `merge` or `overwrite`. | string | `"merge"` | no |
 | force | True to apply every time | bool | `false` | no |
 | nb\_resources | Number of resources to tag | number | `1` | no |
-| resource\_ids | Id of the Azure resource to tag | list(string) | n/a | yes |
+| resource\_ids | Id of the Azure resources to tag | list(string) | n/a | yes |
 | tags | Tags to apply on resource | map(string) | n/a | yes |
 
 
