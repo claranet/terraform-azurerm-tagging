@@ -38,13 +38,12 @@ module "myresource_tagging" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| behavior | Behavior for tags applying. Must be `merge` or `overwrite`. | string | `"merge"` | no |
-| force | True to apply every time | bool | `false` | no |
-| nb\_resources | Number of resources to tag | number | `1` | no |
-| resource\_ids | Id of the Azure resources to tag | list(string) | n/a | yes |
-| tags | Tags to apply on resource | map(string) | n/a | yes |
-
+|------|-------------|------|---------|:-----:|
+| behavior | Behavior for tags applying. Must be `merge` or `overwrite`. | `string` | `"merge"` | no |
+| force | True to apply every time | `bool` | `false` | no |
+| nb\_resources | Number of resources to tag | `number` | n/a | yes |
+| resource\_ids | Id of the Azure resources to tag | `list(string)` | n/a | yes |
+| tags | Tags to apply on resource | `map(string)` | n/a | yes |
 
 ## Related documentation
 
