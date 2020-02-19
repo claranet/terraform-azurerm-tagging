@@ -5,6 +5,6 @@ set -o pipefail
 current_tags=""
 
 if [ ${behavior} == "merge" ]; then
-  current_tags=$(az resource show --subscription ${subscription_id} --ids ${resource_id} -o json --query "@.tags" | tr -d '"{},' | sed 's/: /=/g');
+  current_tags=$(az resource show --subscription "${subscription_id}" --ids "${resource_id}" -o json --query "@.tags" | tr -d '"{},' | sed 's/: /=/g');
 fi
-az resource tag --subscription ${subscription_id} --tags $current_tags ${tags} --ids ${resource_id}
+az resource tag --subscription "${subscription_id}" --tags $current_tags ${tags} --ids "${resource_id}"
