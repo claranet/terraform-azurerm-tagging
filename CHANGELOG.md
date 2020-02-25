@@ -1,3 +1,8 @@
+# v2.0.1 - Unreleased
+
+Fixed:
+  * AZ-65: Escape CLI parameters
+
 # v2.0.0 - 2020-02-17
 
 Changed:
@@ -9,4 +14,4 @@ Breaking
 # v1.0.0 - 2019-05-06
 
 Added
-  * AZ-64: First version
+  * AZ-65: First version
