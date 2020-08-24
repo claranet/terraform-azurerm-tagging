@@ -1,7 +1,9 @@
-# Unreleased
+# v3.0.0 - 2020-08-24
 
 Fixed:
   * AZ-250: Fix Error when using merge : "Invalid Tag Name"
+
+Note: This module is compatible with any version of the AzureRM terraform provider.
 
 # v2.0.1 - 2020-02-25
 
