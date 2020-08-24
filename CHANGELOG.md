@@ -1,3 +1,8 @@
+# Unreleased
+
+Fixed:
+  * AZ-250: Fix Error when using merge : "Invalid Tag Name"
+
 # v2.0.1 - 2020-02-25
 
 Fixed:
@@ -7,10 +12,10 @@ Fixed:
 
 Changed:
   * AZ-157: New input `nb_resources` to count the number of resources. Change `resource_id` to `resource_ids`.
-  
+
 Breaking
   * AZ-94: Upgrade to terraform 0.12
-  
+
 # v1.0.0 - 2019-05-06
 
 Added

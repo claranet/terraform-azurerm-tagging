@@ -1,20 +1,19 @@
 # Azure tagging
 [![Changelog](https://img.shields.io/badge/changelog-release-green.svg)](CHANGELOG.md) [![Notice](https://img.shields.io/badge/notice-copyright-yellow.svg)](NOTICE) [![Apache V2 License](https://img.shields.io/badge/license-Apache%20V2-orange.svg)](LICENSE) [![TF Registry](https://img.shields.io/badge/terraform-registry-blue.svg)](https://registry.terraform.io/modules/claranet/tagging/azurerm/)
 
-
 This Terraform helper allows to merge or overwrite tags on a resource.
 
 ## Requirements
 
   * [AzureCLI](https://docs.microsoft.com/fr-fr/cli/azure/?view=azure-cli-latest) >= 2.1
 
-## Terraform version compatibility
+## Version compatibility
 
-| Module version | Terraform version |
-|----------------|-------------------|
-| >= 2.x.x       | 0.12.x            |
-| < 2.x.x        | 0.11.x            |
-
+| Module version | Terraform version | AzureRM version |
+|----------------|-------------------| --------------- |
+| >= 3.x.x       | 0.12.x            | >= 2.0          |
+| >= 2.x.x       | 0.12.x            | < 2.0           |
+| <  2.x.x       | 0.11.x            | < 2.0           |
 
 ## Usage
 
@@ -38,7 +37,7 @@ module "myresource_tagging" {
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | behavior | Behavior for tags applying. Must be `merge` or `overwrite`. | `string` | `"merge"` | no |
 | force | True to apply every time | `bool` | `false` | no |
 | nb\_resources | Number of resources to tag | `number` | n/a | yes |
