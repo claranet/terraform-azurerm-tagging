@@ -2,9 +2,13 @@
 set -e
 set -o pipefail
 
-current_tags=""
 if [[ ${behavior} == "merge" ]]; then
-  az resource tag -i --subscription "${subscription_id}" --tags ${tags} --ids "${resource_id}"
+  # The option to add tags incrementally without deleting the original tags.
+  # If the key of new tag and original tag are duplicated, the original value
+  #    will be overwritten.
+  TAG_OPTIONS="--is-incremental"
 else
-  az resource tag --subscription "${subscription_id}" --tags ${tags} --ids "${resource_id}"
+  TAG_OPTIONS=""
 fi
+
+az resource tag $TAG_OPTIONS --subscription "${subscription_id}" --tags ${tags} --ids "${resource_id}"
