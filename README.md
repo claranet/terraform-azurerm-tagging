@@ -10,9 +10,10 @@ This Terraform helper allows to merge or overwrite tags on a resource.
 ## Version compatibility
 
 | Module version | Terraform version | AzureRM version |
-|----------------|-------------------| --------------- |
-| >= 4.x.x       | 0.13.x            | >= 2.0          |
-| >= 3.x.x       | 0.12.x            | >= 2.0          |
+| -------------- | ----------------- | --------------- |
+| >= 5.x.x       | 0.15.x & 1.0.x    | >= 1.0          |
+| >= 4.x.x       | 0.13.x            | >= 1.0          |
+| >= 3.x.x       | 0.12.x            | >= 1.0          |
 | >= 2.x.x       | 0.12.x            | < 2.0           |
 | <  2.x.x       | 0.11.x            | < 2.0           |
 
@@ -35,6 +36,25 @@ module "myresource_tagging" {
 }
 ```
 
+<!-- BEGIN_TF_DOCS -->
+## Providers
+
+| Name | Version |
+|------|---------|
+| azurerm | >= 1 |
+| null | >= 2 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [null_resource.tags](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -45,10 +65,10 @@ module "myresource_tagging" {
 | resource\_ids | Id of the Azure resources to tag | `list(string)` | n/a | yes |
 | tags | Tags to apply on resource | `map(string)` | n/a | yes |
 
+## Outputs
+
+No outputs.
+<!-- END_TF_DOCS -->
 ## Related documentation
-
-Terraform null_resource documentation: [terraform.io/docs/provisioners/null_resource.html](https://www.terraform.io/docs/provisioners/null_resource.html)
-
-Terraform local_exec documentation: [terraform.io/docs/provisioners/local-exec.html](https://www.terraform.io/docs/provisioners/local-exec.html)
 
 Microsoft Azure tagging documentation: [docs.microsoft.com/fr-fr/azure/azure-resource-manager/resource-group-using-tags](https://docs.microsoft.com/fr-fr/azure/azure-resource-manager/resource-group-using-tags)
