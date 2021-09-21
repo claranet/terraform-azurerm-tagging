@@ -3,40 +3,40 @@
 
 This Terraform helper allows to merge or overwrite tags on a resource.
 
-## Requirements
-
-  * [AzureCLI](https://docs.microsoft.com/fr-fr/cli/azure/?view=azure-cli-latest) >= 2.1
-
-## Version compatibility
+<!-- BEGIN_TF_DOCS -->
+## Global versioning rule for Claranet Azure modules
 
 | Module version | Terraform version | AzureRM version |
 | -------------- | ----------------- | --------------- |
-| >= 5.x.x       | 0.15.x & 1.0.x    | >= 1.0          |
-| >= 4.x.x       | 0.13.x            | >= 1.0          |
-| >= 3.x.x       | 0.12.x            | >= 1.0          |
+| >= 5.x.x       | 0.15.x & 1.0.x    | >= 2.0          |
+| >= 4.x.x       | 0.13.x            | >= 2.0          |
+| >= 3.x.x       | 0.12.x            | >= 2.0          |
 | >= 2.x.x       | 0.12.x            | < 2.0           |
 | <  2.x.x       | 0.11.x            | < 2.0           |
 
 ## Usage
 
-You can use this module by including it this way:
-```
+This module is optimized to work with the [Claranet terraform-wrapper](https://github.com/claranet/terraform-wrapper) tool
+which set some terraform variables in the environment needed by this module.
+More details about variables set by the `terraform-wrapper` available in the [documentation](https://github.com/claranet/terraform-wrapper#environment).
+
+```hcl
 module "myresource_tagging" {
   source  = "claranet/tagging/azurerm"
   version = "x.x.x"
 
   nb_resources = 2
   resource_ids = [var.myresource_id_1, var.myresource_id_2]
-  behavior     = "merge"   # Must be "merge" or "overwrite"
-  
+  behavior     = "merge" # Must be "merge" or "overwrite"
+
   tags = {
     "foo"        = "bar"
     "monitoring" = "true"
   }
 }
+
 ```
 
-<!-- BEGIN_TF_DOCS -->
 ## Providers
 
 | Name | Version |
