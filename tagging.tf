@@ -17,8 +17,15 @@ resource "null_resource" "tags" {
 
   # Code found here https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags#code-try-22
   provisioner "local-exec" {
-    interpreter = ["/bin/bash", "-c"]
-    command = templatefile("${path.module}/script/tag.sh.tmpl",
+    interpreter = var.interpreter == "PowerShell" ? ["PowerShell"] : ["/bin/bash", "-c"]
+    command     = var.interpreter == "PowerShell" ? templatefile("${path.module}/script/tag.ps1.tmpl",
+      {
+        behavior        = var.behavior
+        resource_id     = var.resource_ids[count.index]
+        tags            = local.tags
+        subscription_id = data.azurerm_client_config.current.subscription_id
+      }
+    ) : templatefile("${path.module}/script/tag.sh.tmpl",
       {
         behavior        = var.behavior
         resource_id     = var.resource_ids[count.index]
