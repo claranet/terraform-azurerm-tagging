@@ -1,0 +1,11 @@
+If ( "${behavior}" -eq "merge" ) {
+  # The option to add tags incrementally without deleting the original tags.
+  # If the key of new tag and original tag are duplicated, the original value
+  #    will be overwritten.
+  $TAG_OPTIONS = "--is-incremental" }
+else {
+  $TAG_OPTIONS = ""
+}
+Write-Output "Tagging resource ${resource_id} with tags ${tags} using mode ${behavior} with option $TAG_OPTIONS"
+
+az resource tag $TAG_OPTIONS --subscription "${subscription_id}" --tags ${tags} --ids "${resource_id}"
