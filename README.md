@@ -27,7 +27,8 @@ module "myresource_tagging" {
 
   nb_resources = 2
   resource_ids = [var.myresource_id_1, var.myresource_id_2]
-  behavior     = "merge" # Must be "merge" or "overwrite"
+  behavior     = "merge" # Must be "merge" or "overwrite", defaults to "merge"
+  interpeter   = "bash"  # Must be "bash" or "PowerShell", defaults to "bash"
 
   tags = {
     "foo"        = "bar"
@@ -60,6 +61,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | behavior | Behavior for tags applying. Must be `merge` or `overwrite`. | `string` | `"merge"` | no |
+| interpreter | Interpreter provisioner should use | `string` | `"bash"` | no |
 | force | True to apply every time | `bool` | `false` | no |
 | nb\_resources | Number of resources to tag | `number` | n/a | yes |
 | resource\_ids | Id of the Azure resources to tag | `list(string)` | n/a | yes |
