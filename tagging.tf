@@ -17,7 +17,7 @@ resource "null_resource" "tags" {
 
   # Code found here https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-using-tags#code-try-22
   provisioner "local-exec" {
-    interpreter = var.interpreter == "PowerShell" ? ["PowerShell"] : ["/bin/bash", "-c"]
+    interpreter = local.is_powershell ? ["PowerShell"] : ["/bin/bash", "-c"]
     command     = templatefile(format("%s/script/%s", path.module, local.is_powershell ? "tag.ps1.tmpl" : "tag.sh.tmpl"),
       {
         behavior        = var.behavior
