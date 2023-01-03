@@ -1,4 +1,5 @@
 locals {
+  is_powershell = var.interpreter == "PowerShell"
   tags = join(" ", formatlist("%s=\"%s\"", keys(var.tags), values(var.tags)))
 }
 
