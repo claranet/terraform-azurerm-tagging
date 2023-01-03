@@ -30,7 +30,7 @@ variable "nb_resources" {
 }
 
 variable "interpreter" {
-  description = "Indicates which OS the script is running in"
+  description = "System interpreter to use for tagging script."
   type        = string
   default     = "bash"
   validation {
