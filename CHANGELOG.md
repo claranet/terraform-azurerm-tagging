@@ -1,7 +1,7 @@
 # Unreleased
 
 Added
-  * GH-3: Add Powershell support
+  * [GH-3](https://github.com/claranet/terraform-azurerm-tagging/pull/3): Add Powershell support
 
 # v3.0.3/v4.0.2 - 2022-01-03
 
