@@ -42,7 +42,7 @@ module "myresource_tagging" {
 
 | Name | Version |
 |------|---------|
-| azurerm | >= 1 |
+| azurerm | >= 1.31 |
 | null | >= 2 |
 
 ## Modules
@@ -62,6 +62,7 @@ No modules.
 |------|-------------|------|---------|:--------:|
 | behavior | Behavior for tags applying. Must be `merge` or `overwrite`. | `string` | `"merge"` | no |
 | force | True to apply every time | `bool` | `false` | no |
+| interpreter | System interpreter to use for tagging script. | `string` | `"bash"` | no |
 | nb\_resources | Number of resources to tag | `number` | n/a | yes |
 | resource\_ids | Id of the Azure resources to tag | `list(string)` | n/a | yes |
 | tags | Tags to apply on resource | `map(string)` | n/a | yes |
