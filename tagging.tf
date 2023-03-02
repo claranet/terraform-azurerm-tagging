@@ -1,6 +1,10 @@
 locals {
   is_powershell = var.interpreter == "PowerShell"
-  tags          = join(" ", formatlist("%s=\"%s\"", keys(var.tags), values(var.tags)))
+  trimmed_tags = {
+    for key, value in var.tags :
+    key => value if value != null
+  }
+  tags = join(" ", formatlist("%s=\"%s\"", keys(local.trimmed_tags), values(local.trimmed_tags)))
 }
 
 data "azurerm_client_config" "current" {}
