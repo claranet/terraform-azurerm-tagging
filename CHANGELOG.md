@@ -1,3 +1,8 @@
+# Unreleased
+
+Fixed
+  * AZ-1019: Allow map of tags with `null` values. Will discard keys with `null` values.
+
 # v6.0.0 - 2023-01-13
 
 Added
