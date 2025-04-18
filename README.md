@@ -53,7 +53,7 @@ module "myresource_tagging" {
 
 | Name | Version |
 |------|---------|
-| azurerm | >= 1.31 |
+| azurerm | >= 3.0 |
 | null | >= 2 |
 
 ## Modules
