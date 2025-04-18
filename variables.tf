@@ -1,6 +1,6 @@
 variable "resources_ids" {
-  description = "Id of the Azure resources to tag."
-  type        = list(string)
+  description = "Id of the Azure resources to tag. Can be a list of resource IDs or a map 'name' => 'resource ID'."
+  type        = any
   nullable    = false
 }
 
@@ -26,12 +26,6 @@ variable "behavior" {
     error_message = "The value for behavior must be either `merge` or `overwrite`."
   }
   nullable = false
-}
-
-variable "resources_count" {
-  description = "Number of resources to tag."
-  type        = number
-  nullable    = false
 }
 
 variable "interpreter" {

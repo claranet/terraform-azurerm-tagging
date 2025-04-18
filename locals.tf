@@ -6,4 +6,6 @@ locals {
     key => value if value != null
   }
   tags = join(" ", formatlist("%s=\"%s\"", keys(local.trimmed_tags), values(local.trimmed_tags)))
+
+  is_list = can(tolist(var.resources_ids))
 }

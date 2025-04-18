@@ -1,8 +1,8 @@
 resource "terraform_data" "main" {
-  count = var.resources_count
+  for_each = local.is_list ? { for i, r in tolist(var.resources_ids) : i => r } : var.resources_ids
 
   triggers_replace = {
-    resource    = var.resources_ids[count.index]
+    resource    = each.value
     tags        = jsonencode(var.tags)
     force-apply = var.force ? uuid() : false
     behavior    = var.behavior
@@ -14,7 +14,7 @@ resource "terraform_data" "main" {
     command = templatefile(format("%s/script/%s", path.module, local.is_powershell ? "tag.ps1.tmpl" : "tag.sh.tmpl"),
       {
         behavior        = var.behavior
-        resource_id     = var.resources_ids[count.index]
+        resource_id     = each.value
         tags            = local.tags
         subscription_id = data.azurerm_client_config.current.subscription_id
       }
