@@ -38,8 +38,8 @@ module "myresource_tagging" {
   source  = "claranet/tagging/azurerm"
   version = "x.x.x"
 
-  # resources_count = 2
-  # resources_ids   = [var.myresource_id_1, var.myresource_id_2]
+  # resource_count = 2
+  # resources_ids  = [var.myresource_id_1, var.myresource_id_2]
   # or with named resources:
   resources_ids = {
     "myresource_1" = var.myresource_id_1
@@ -81,7 +81,7 @@ No modules.
 | force | Whether this must be applied every time. | `bool` | `false` | no |
 | interpreter | System interpreter to use for tagging script. Must be `bash` or `powershell`. | `string` | `"bash"` | no |
 | resource\_count | Number of resources to tag. | `number` | `null` | no |
-| resources\_ids | Id of the Azure resources to tag. Can be a list of resource IDs or a map 'name' => 'resource ID'. | `any` | n/a | yes |
+| resources\_ids | IDs of the Azure resources to tag. Can be a list of resource IDs or a map ('name' => 'resource ID'). | `any` | n/a | yes |
 | tags | Tags to apply on resources. | `map(string)` | n/a | yes |
 
 ## Outputs

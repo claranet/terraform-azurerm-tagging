@@ -1,7 +1,11 @@
 variable "resources_ids" {
-  description = "Id of the Azure resources to tag. Can be a list of resource IDs or a map 'name' => 'resource ID'."
+  description = "IDs of the Azure resources to tag. Can be a list of resource IDs or a map ('name' => 'resource ID')."
   type        = any
   nullable    = false
+  validation {
+    condition     = anytrue([can(tolist(var.resources_ids)), can(tomap(var.resources_ids))])
+    error_message = "The value of `var.resources_ids` must be a list or a map."
+  }
 }
 
 variable "tags" {
@@ -40,7 +44,7 @@ variable "interpreter" {
   type        = string
   default     = "bash"
   validation {
-    condition     = contains(["bash", "PowerShell"], lower(var.interpreter))
+    condition     = contains(["bash", "powershell"], lower(var.interpreter))
     error_message = "The value for interpreter must be either `bash` or `powershell`."
   }
   nullable = false
