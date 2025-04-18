@@ -28,6 +28,13 @@ variable "behavior" {
   nullable = false
 }
 
+variable "resource_count" {
+  description = "Number of resources to tag."
+  type        = number
+  nullable    = true
+  default     = null
+}
+
 variable "interpreter" {
   description = "System interpreter to use for tagging script. Must be `bash` or `powershell`."
   type        = string

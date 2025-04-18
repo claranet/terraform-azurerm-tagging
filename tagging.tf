@@ -1,5 +1,5 @@
 resource "terraform_data" "main" {
-  for_each = local.is_list ? { for i, r in tolist(var.resources_ids) : i => r } : var.resources_ids
+  for_each = local.normalized_resources
 
   triggers_replace = {
     resource    = each.value
