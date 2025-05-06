@@ -1,3 +1,30 @@
+## 8.0.0 (2025-05-06)
+
+### ⚠ BREAKING CHANGES
+
+* refactor module structure (prepare v8)
+
+### Features
+
+* ✨ handle list or map for resources 5478c25
+* 💥 ✨ enhance resources management and output 9e44600
+
+### Documentation
+
+* 📚️ add list example a20e28d
+
+### Code Refactoring
+
+* ♻️ better handling for resources type 8708456
+
+### Miscellaneous Chores
+
+* 🔧 apply suggestion(s) to 3 file(s) d7d84e8
+* **deps:** update dependency opentofu to v1.9.1 2f76290
+* **deps:** update dependency tflint to v0.57.0 bb90bb9
+* **deps:** update dependency trivy to v0.61.1 5a69d18
+* **deps:** update dependency trivy to v0.62.0 00393da
+
 ## 7.0.0 (2025-04-18)
 
 ### ⚠ BREAKING CHANGES
