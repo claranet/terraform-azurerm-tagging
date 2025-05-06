@@ -38,9 +38,15 @@ module "myresource_tagging" {
   source  = "claranet/tagging/azurerm"
   version = "x.x.x"
 
-  nb_resources = 2
-  resource_ids = [var.myresource_id_1, var.myresource_id_2]
-  behavior     = "merge" # Must be "merge" or "overwrite"
+  # resource_count = 2
+  # resources_ids  = [var.myresource_id_1, var.myresource_id_2]
+  # or with named resources:
+  resources_ids = {
+    "myresource_1" = var.myresource_id_1
+    "myresource_2" = var.myresource_id_2
+  }
+
+  behavior = "merge" # Must be "merge" or "overwrite"
 
   tags = {
     "foo"        = "bar"
@@ -53,8 +59,8 @@ module "myresource_tagging" {
 
 | Name | Version |
 |------|---------|
-| azurerm | >= 3.0 |
-| null | >= 2 |
+| azurerm | ~> 4.0 |
+| terraform | n/a |
 
 ## Modules
 
@@ -64,19 +70,19 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [null_resource.tags](https://registry.terraform.io/providers/hashicorp/null/latest/docs/resources/resource) | resource |
+| [terraform_data.main](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| behavior | Behavior for tags applying. Must be `merge` or `overwrite`. | `string` | `"merge"` | no |
-| force | True to apply every time | `bool` | `false` | no |
-| interpreter | System interpreter to use for tagging script. | `string` | `"bash"` | no |
-| nb\_resources | Number of resources to tag | `number` | n/a | yes |
-| resource\_ids | Id of the Azure resources to tag | `list(string)` | n/a | yes |
-| tags | Tags to apply on resource | `map(string)` | n/a | yes |
+| behavior | Behavior for tagging. Must be `merge` to keep existing or `overwrite` to replace tags. | `string` | `"merge"` | no |
+| force | Whether this must be applied every time. | `bool` | `false` | no |
+| interpreter | System interpreter to use for tagging script. Must be `bash` or `powershell`. | `string` | `"bash"` | no |
+| resource\_count | Number of resources to tag. | `number` | `null` | no |
+| resources\_ids | IDs of the Azure resources to tag. Can be a list of resource IDs or a map ('name' => 'resource ID'). | `any` | n/a | yes |
+| tags | Tags to apply on resources. | `map(string)` | n/a | yes |
 
 ## Outputs
 

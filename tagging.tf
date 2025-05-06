@@ -1,20 +1,8 @@
-locals {
-  is_powershell = var.interpreter == "PowerShell"
-  trimmed_tags = {
-    for key, value in var.tags :
-    key => value if value != null
-  }
-  tags = join(" ", formatlist("%s=\"%s\"", keys(local.trimmed_tags), values(local.trimmed_tags)))
-}
+resource "terraform_data" "main" {
+  for_each = local.normalized_resources
 
-data "azurerm_client_config" "current" {}
-
-resource "null_resource" "tags" {
-
-  count = var.nb_resources
-
-  triggers = {
-    resource    = var.resource_ids[count.index]
+  triggers_replace = {
+    resource    = each.value
     tags        = jsonencode(var.tags)
     force-apply = var.force ? uuid() : false
     behavior    = var.behavior
@@ -26,11 +14,10 @@ resource "null_resource" "tags" {
     command = templatefile(format("%s/script/%s", path.module, local.is_powershell ? "tag.ps1.tmpl" : "tag.sh.tmpl"),
       {
         behavior        = var.behavior
-        resource_id     = var.resource_ids[count.index]
+        resource_id     = each.value
         tags            = local.tags
         subscription_id = data.azurerm_client_config.current.subscription_id
       }
     )
   }
-
 }
