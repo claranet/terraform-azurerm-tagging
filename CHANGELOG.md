@@ -1,3 +1,53 @@
+## 8.0.1 (2026-02-13)
+
+### Code Refactoring
+
+* **gitlab MR template:** ♻️ update default reviewers group with Azure Factory 🔧 b2d6983
+
+### Miscellaneous Chores
+
+* **⚙️:** ✏️ update template identifier for MR review 947e099
+* 🗑️ remove old commitlint configuration files 781249c
+* **deps:** 🔗 bump AzureRM provider version to v4.31+ 4aa620c
+* **deps:** update dependency opentofu to v1.10.0 37777c1
+* **deps:** update dependency opentofu to v1.10.1 9f23891
+* **deps:** update dependency opentofu to v1.10.3 9f271f7
+* **deps:** update dependency opentofu to v1.10.6 7abb8e8
+* **deps:** update dependency opentofu to v1.10.7 d4e4e52
+* **deps:** update dependency opentofu to v1.11.1 c7ad025
+* **deps:** update dependency opentofu to v1.11.2 d45ff5f
+* **deps:** update dependency opentofu to v1.11.3 d9816fa
+* **deps:** update dependency opentofu to v1.11.4 bcc72fe
+* **deps:** update dependency opentofu to v1.11.5 7632321
+* **deps:** update dependency pre-commit to v4.4.0 3c6152d
+* **deps:** update dependency pre-commit to v4.5.0 0318bd5
+* **deps:** update dependency pre-commit to v4.5.1 aa658f4
+* **deps:** update dependency terraform-docs to v0.21.0 eab3f22
+* **deps:** update dependency tflint to v0.58.0 69fb7cb
+* **deps:** update dependency tflint to v0.58.1 9e46a43
+* **deps:** update dependency tflint to v0.59.1 56c3114
+* **deps:** update dependency tflint to v0.60.0 d7bf22a
+* **deps:** update dependency tflint to v0.61.0 850d23b
+* **deps:** update dependency trivy to v0.62.1 5794780
+* **deps:** update dependency trivy to v0.63.0 7d536ec
+* **deps:** update dependency trivy to v0.66.0 d3a4d03
+* **deps:** update dependency trivy to v0.67.0 824642e
+* **deps:** update dependency trivy to v0.67.1 0310faf
+* **deps:** update dependency trivy to v0.67.2 583f6fb
+* **deps:** update dependency trivy to v0.68.1 71b9335
+* **deps:** update dependency trivy to v0.68.2 f59189e
+* **deps:** update dependency trivy to v0.69.0 6a56888
+* **deps:** update dependency trivy to v0.69.1 9d9b1de
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.10 3c2d4a3
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.8 d3cbf33
+* **deps:** update pre-commit hook crate-ci/committed to v1.1.9 4e9b688
+* **deps:** update pre-commit hook pre-commit/pre-commit-hooks to v6 512f878
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.1 cf51ee9
+* **deps:** update pre-commit hook tofuutils/pre-commit-opentofu to v2.2.2 c521a1b
+* **deps:** update tools 652ea33
+* **deps:** update tools 3934a8f
+* **deps:** update tools abce513
+
 ## 8.0.0 (2025-05-06)
 
 ### ⚠ BREAKING CHANGES
