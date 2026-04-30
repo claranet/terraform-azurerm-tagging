@@ -58,7 +58,7 @@ module "myresource_tagging" {
 ## Providers
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | azurerm | ~> 4.31 |
 | terraform | n/a |
 
@@ -69,14 +69,14 @@ No modules.
 ## Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [terraform_data.main](https://registry.terraform.io/providers/hashicorp/terraform/latest/docs/resources/data) | resource |
 | [azurerm_client_config.current](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/client_config) | data source |
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
 | behavior | Behavior for tagging. Must be `merge` to keep existing or `overwrite` to replace tags. | `string` | `"merge"` | no |
 | force | Whether this must be applied every time. | `bool` | `false` | no |
 | interpreter | System interpreter to use for tagging script. Must be `bash` or `powershell`. | `string` | `"bash"` | no |
