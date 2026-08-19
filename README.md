@@ -60,7 +60,7 @@ module "myresource_tagging" {
 
 | Name | Version |
 | ---- | ------- |
-| azurerm | ~> 4.31 |
+| azurerm | ~> 5.0 |
 | terraform | n/a |
 
 ## Modules
